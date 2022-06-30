@@ -11,6 +11,7 @@ Built with Docker and [Symfony Components](https://symfony.com/components). as c
 
 ## How to use
 Download or clone project from repository.
+    `git clone https://github.com/JanaksinhJadeja/parser-tool.git`
 
 ## How to start project
 

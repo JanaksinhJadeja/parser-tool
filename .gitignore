@@ -3,5 +3,4 @@
 /html/
 /html-coverage/
 /data/temp
-composer.lock
 .phpunit.cache
