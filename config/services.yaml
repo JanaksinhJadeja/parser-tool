@@ -1,0 +1,16 @@
+services:
+  _defaults:
+    bind:
+      $appName: '%app_name%'
+      $appVersion: '%app_version%'
+      $tempDir: '%kernel.temp_dir%'
+      $dataDir: '%kernel.data_dir%'
+    autowire: true
+    autoconfigure: true
+
+  App\:
+    resource: '../src/'
+    exclude:
+      - '../src/DependencyInjection/'
+      - '../src/Tests/'
+      - '../src/Kernel.php'

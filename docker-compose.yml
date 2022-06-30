@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  php:
+    build:
+      context: ./
+      target: ps_demo_php
+    healthcheck:
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 30s
+    networks:
+      - market-net
+    environment:
+      - APP_NAME=${APP_NAME}
+      - APP_VERSION=${APP_VERSION}
+    volumes:
+      - ./:/var/www:rw,cached
+      - ./docker/php/conf.d/api-platform.dev.ini:/usr/local/etc/php/conf.d/api-platform.ini
+
+networks:
+  market-net:
+    driver: bridge
+
+volumes:
+  mariadbdata:
+    driver: local
