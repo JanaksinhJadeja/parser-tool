@@ -2,5 +2,6 @@
 .idea
 /html/
 /html-coverage/
-/data/temp
+/data/temp/*
+!/data/temp/.keepme
 .phpunit.cache
