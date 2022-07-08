@@ -8,7 +8,6 @@ use App\Exception\FileNotFoundException;
 use App\Exception\FileNotFoundOnUrlException;
 use Symfony\Component\HttpClient\CurlHttpClient;
 
-
 /**
  * Primary purpose of Class is to handle file.
  */
