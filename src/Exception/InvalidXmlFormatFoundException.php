@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Converter\Exception;
+namespace App\Exception;
 
 class InvalidXmlFormatFoundException extends \RuntimeException
 {

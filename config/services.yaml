@@ -13,4 +13,7 @@ services:
     exclude:
       - '../src/DependencyInjection/'
       - '../src/Tests/'
+      - '../src/Reader/'
+      - '../src/Writer/'
       - '../src/Kernel.php'
+

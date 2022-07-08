@@ -23,7 +23,7 @@ class AppTest extends AppTestCase
     {
         $output = shell_exec($this->consolePath);
         $this->assertStringContainsString('Usage:', $output);
-        $this->assertStringContainsString('ps:xmltocsv', $output);
+        $this->assertStringContainsString('ps:convert', $output);
     }
 
     public function testAppManagerReturnsCorrectAppName()

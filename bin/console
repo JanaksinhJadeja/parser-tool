@@ -36,11 +36,13 @@ if (!function_exists('tagged_iterator')) {
     }
 }
 
+
 $containerBuilder = new ContainerBuilder();
 $containerBuilder->setParameter('kernel.logs_dir', dirname(__DIR__).'/var/log');
 $containerBuilder->setParameter('kernel.temp_dir', dirname(__DIR__).'/var/temp');
 $containerBuilder->setParameter('kernel.data_dir', dirname(__DIR__).'/data');
 $loader = new YamlFileLoader($containerBuilder, new FileLocator(dirname(__DIR__).'/config'));
+
 try {
     $loader->load('services.yaml');
     $loader->load('parameters.yaml');

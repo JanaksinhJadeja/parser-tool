@@ -2,16 +2,15 @@
 
 namespace App\Tests;
 
-use App\AppManager;
-use App\Command\XmlToCSVCommand;
+use App\Command\ConvertCommand;
 use App\Kernel;
-use Monolog\Handler\StreamHandler;
-use Monolog\Logger;
-use PHPUnit\Framework\TestCase;
+use App\Services\FileService;
+use App\Services\ReaderService;
+use App\Services\WriterService;
 
 /**
  * @covers \App\Kernel
- * @covers \App\Command\XmlToCSVCommand
+ * @covers \App\Command\ConvertCommand
  * @covers \App\AppManager
  */
 class KernelTest extends AppTestCase
@@ -19,11 +18,14 @@ class KernelTest extends AppTestCase
     public function setUp(): void
     {
         parent::setUp();
+        $this->writerService  = new WriterService();
+        $this->readerService  = new ReaderService();
+        $this->fileService    = new FileService();
     }
 
     public function testKernelInitialize(): void
     {
-        $kernel = new Kernel([new XmlToCSVCommand($this->appManager, 'ps:xmltocsv')]);
+        $kernel = new Kernel([new ConvertCommand($this->writerService, $this->readerService, $this->fileService, $this->logger, 'ps:convert')]);
 
         $this->assertInstanceOf(Kernel::class, $kernel);
         $this->assertEquals('UNKNOWN', $kernel->getName());
