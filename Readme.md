@@ -5,7 +5,6 @@ Parser-tool is command to convert data from one format to another.
  - XML to Csv
  - XML to Sqlite [TBD]
  - XML to Google Sheet [TBD]
- - CSV to XML
 
 Built with Docker and [Symfony Components](https://symfony.com/components). as console application.
 
@@ -86,7 +85,7 @@ From project root run commands.
 
 
 ## Arguments: infile
-You must use source **file** path or **web url** as first argument and **key** as second argument. **key** is  repeating group in your input.:
+You must use source **file** path or **web url** as argument.
 
 **URL**
 
@@ -95,6 +94,9 @@ You must use source **file** path or **web url** as first argument and **key** a
 **File**
 
     $ docker-compose exec php bin/console ps:convert --source=xml --target=csv --source_type=local  --key=item /var/www/data/files/coffee_feed.xml
+
+## --key
+The  `-k`  or  `--key`  parameter is use to repeating group in your input. Use for XML file.
 
 ## --outfile
 The  `-o`  or  `--outfile`  parameter sets the file in which to save the converted results. If no parameter is set, then the output is written to the screen:
